@@ -15,6 +15,10 @@ Atualmente estudando **JavaScript, HTML & CSS**.
   <a href="https://www.linkedin.com/in/feejunior/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
 </div>
 
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=feejunior&show_icons=true&locale=en&layout=compact&theme=transparent" alt="feejunior" /></p>
+<div>
+  <img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=feejunior&show_icons=true&locale=en&layout=compact&theme=transparent" alt="feejunior" /></p>
+</div>
 
+<div>
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=feejunior&show_icons=true&theme=transparent" alt="feejunior" /></p>
+</div>
