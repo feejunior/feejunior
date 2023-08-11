@@ -17,6 +17,6 @@ Atualmente estudando **JavaScript, HTML & CSS**.
 
 <p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=feejunior&show_icons=true&locale=en&layout=compact" alt="feejunior" /></p>
 
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=feejunior&show_icons=true&locale=en" alt="feejunior" /></p>
+<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=feejunior&show_icons=true&theme=transparent" alt="feejunior" /></p>
 
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?feejunior=anuraghazra&show_icons=true&theme=transparent)
