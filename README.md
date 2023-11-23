@@ -8,7 +8,7 @@
   <img align="center" alt="FJR-CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
   <img align="center" alt="FJR-FIGMA" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/figma/figma-original.svg">
   <img align="center" alt="FJR-MARKDOWN" height="30" width="40" src="https://static-00.iconduck.com/assets.00/markdown-icon-512x512-bfxegudd.png">
-  <img align="center" alt="FJR-EMACS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/emacs/emacs-original.svg">
+  <img align="center" alt="FJR-OPENBSD" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/openbsd/openbsd-original.svg">
 </div>
   
   ##
