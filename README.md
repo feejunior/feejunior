@@ -1,6 +1,8 @@
 ## Oi, eu sou o Felipe Junior!
-
-✍️ Atualmente trabalhando com **Emacs** e **Shell** pelo **OpenBSD**. Estudando **JavaScript, HTML & CSS**.
+  
+✍️ Atualmente trabalhando com **Emacs** e **Shell** pelo **OpenBSD**.
+🔭 Developer na [StarOne Consultoria e Ciberinteligência](https://starone.one/)
+👨‍🎓 Estudando **JavaScript, HTML & CSS** na **Alura**.
 
 <div style="display: inline_block"><br>
   <img align="center" alt="FJR-Js" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
