@@ -9,6 +9,7 @@
   <img align="center" alt="FJR-FIGMA" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/figma/figma-original.svg">
   <img align="center" alt="FJR-MARKDOWN" height="30" width="40" src="https://static-00.iconduck.com/assets.00/markdown-icon-512x512-bfxegudd.png">
   <img align="center" alt="FJR-LINUX" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg">
+  <img align="center" alt="FJR-GIT" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg">
 </div>
   
   ##
