@@ -9,7 +9,7 @@
   <img align="center" alt="FJR-CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
   <img align="center" alt="FJR-FIGMA" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/figma/figma-original.svg">
   <img align="center" alt="FJR-MARKDOWN" height="30" width="40" src="https://static-00.iconduck.com/assets.00/markdown-icon-512x512-bfxegudd.png">
-  <img align="center" alt="FJR-LINUX" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg">
+  <img align="center" alt="FJR-LINUX" height="30" width="40" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FOpenBSD&psig=AOvVaw0gYjo1wH_AAXKCHXEiKIDX&ust=1706360095935000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCLjjze6M-4MDFQAAAAAdAAAAABAD">
   <img align="center" alt="FJR-GIT" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg">
 </div>
   
