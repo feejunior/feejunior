@@ -4,9 +4,9 @@
 🔭 Developer na [StarOne Consultoria e Ciberinteligência](https://starone.one/).  
 👨‍🎓 Estudando **Erlang**.
 
-<div style="display: inline_block"><br>
-  <img align="center" alt="FJR-ERLANG" height="30" width="40" src="https://learnyousomeerlang.com/static/img/erlang.png">
+<div style="display: inline_block"><br>  
   <img align="center" alt="FJR-OPENBSD" height="30" width="40" src="https://cloud.githubusercontent.com/assets/566201/5627077/bc543184-958b-11e4-94f5-d1bddac33dfd.png">
+  <img align="center" alt="FJR-ERLANG" height="30" width="40" src="https://learnyousomeerlang.com/static/img/erlang.png">
   <img align="center" alt="FJR-HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
   <img align="center" alt="FJR-CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
   <img align="center" alt="FJR-FIGMA" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/figma/figma-original.svg">
