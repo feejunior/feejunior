@@ -1,7 +1,7 @@
 ## Oi, eu sou o Felipe Junior!
   
 ✍️ Atualmente trabalhando com **Emacs** e **Shell** pelo **OpenBSD**.  
-🔭 Developer na [StarOne Consultoria e Ciberinteligência](https://starone.one/).  
+🔭 Developer na
 👨‍🎓 Estudando **Erlang**.
 
 <div style="display: inline_block"><br>  
