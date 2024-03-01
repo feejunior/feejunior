@@ -1,6 +1,6 @@
-## Oi, eu sou o Felipe Junior!
+## Olá, me chamo Felipe Junior!
   
-✍️ Atualmente trabalhando com **Emacs** e **Shell** pelo **OpenBSD**.  
+✍️ Atualmente trabalhando com **Emacs** e **Shell** pelo **Linux** e **OpenBSD**.  
 🔭 Developer na []().  
 👨‍🎓 Estudando **Erlang**.
 
