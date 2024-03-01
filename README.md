@@ -2,6 +2,7 @@
   
 ✍️ Atualmente trabalhando com **Emacs** e **Shell** pelo **OpenBSD**.  
 🔭 QA Tester na [Cronos Fintech](https://cronosfintech.com.br/).
+
 👨‍🎓 Estudando **Erlang**.
 
 <div style="display: inline_block"><br>  
