@@ -1,7 +1,7 @@
 ## Olá, me chamo Felipe Junior!
   
 ✍️ Atualmente trabalhando com **Emacs** e **Shell** pelo **Linux** e **OpenBSD**.  
-🔭 Developer na []().  
+🔭 QA TESTER na [Cronos Bank](https://cronosfintech.com.br/).  
 👨‍🎓 Estudando **Erlang**.
 
 <div style="display: inline_block"><br>  
