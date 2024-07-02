@@ -1,6 +1,6 @@
 ## Olá, me chamo Felipe Junior!
   
-✍️ Atualmente trabalhando com **Testes Automatizados** pelo **Cypress**.  
+✍️ Atualmente trabalhando com **Testes Automatizados e Manuais** buscando sempre a melhoria da **Qualidade** e a perfeição.  
 🔭 QA TESTER na [Cronos Bank](https://cronosfintech.com.br/).  
 👨‍🎓 Estudando **Erlang** e outras linguagens.
 
