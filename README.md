@@ -29,5 +29,5 @@
 </div>
 
 <div>
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=feejunior&show_icons=true&theme=transparent" alt="feejunior" /></p>
+<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=feejunior&show_icons=false&theme=transparent" alt="feejunior" /></p>
 </div>
