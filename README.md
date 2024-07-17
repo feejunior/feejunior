@@ -25,9 +25,9 @@
 </div>
 
 <div>
-  <img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=feejunior&show_icons=false&locale=en&layout=compact&theme=transparent" alt="feejunior" /></p>
+  <img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=feejunior&show_icons=true&locale=en&layout=compact&theme=transparent" alt="feejunior" /></p>
 </div>
 
 <div>
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=feejunior&show_icons=false&theme=transparent" alt="feejunior" /></p>
+<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=feejunior&show_icons=true&theme=transparent" alt="feejunior" /></p>
 </div>
