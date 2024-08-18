@@ -10,7 +10,6 @@
   <img align="center" alt="FJR-ERLANG" height="30" width="40" src="https://learnyousomeerlang.com/static/img/erlang.png">
   <img align="center" alt="FJR-EMACS" height="30" width="40" src="https://upload.wikimedia.org/wikipedia/commons/0/08/EmacsIcon.svg">
   <img align="center" alt="FJR-ORG" height="30" width="40" src="https://orgmode.org/resources/img/org-mode-unicorn.svg">
-  <img align="center" alt="FJR-MARKDOWN" height="30" width="40" src="https://static-00.iconduck.com/assets.00/markdown-icon-512x512-bfxegudd.png">
   <img align="center" alt="FJR-GIT" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg">
 </div>
   
