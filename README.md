@@ -7,14 +7,7 @@
 
 ✍️ Atualmente trabalhando com **Testes Automatizados e Manuais** buscando sempre a melhoria da **Qualidade** e a **Perfeição**.   
 🔭 QA TESTER na [Cronos Bank](https://cronosfintech.com.br/).  
-👨‍🎓 Estudando **Erlang** e outras linguagens.
-
-<div style="display: inline_block"><br>  
-  <img align="center" alt="FJR-LINUX" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg">
-  <img align="center" alt="FJR-ERLANG" height="30" width="40" src="https://learnyousomeerlang.com/static/img/erlang.png">
-  <img align="center" alt="FJR-EMACS" height="30" width="40" src="https://upload.wikimedia.org/wikipedia/commons/0/08/EmacsIcon.svg">
-  <img align="center" alt="FJR-ORG" height="30" width="40" src="https://orgmode.org/resources/img/org-mode-unicorn.svg">
-</div>
+👨‍🎓 Estudando **Phyton**, **Erlang** e **Django**.
   
   ##
  
