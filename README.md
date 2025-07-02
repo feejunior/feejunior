@@ -6,7 +6,6 @@
 </div>
 
 ✍️ Atualmente trabalhando com **Testes Automatizados e Manuais** buscando sempre a melhoria da **Qualidade** e a **Perfeição**.   
-🔭 QA na [Cronos Fintech](https://cronosfintech.com.br/).  
 👨‍🎓 Estudando **Phyton**, **Erlang** e **Django**.
   
   ##
