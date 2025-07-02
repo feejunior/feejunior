@@ -5,8 +5,9 @@
   <a href="https://www.linkedin.com/in/feejunior/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
 </div>
 
-✍️ Atualmente trabalhando com **Testes Automatizados e Manuais** buscando sempre a melhoria da **Qualidade** e a **Perfeição**.   
-👨‍🎓 Estudando **Phyton**, **Erlang** e **Django**.
+🔭 [Kontrl Tech](https://kontrl.tech/).  
+✍️ Atualmente trabalhando com **Testes Automatizados e Manuais** buscando sempre a melhoria da **Qualidade** e a **Perfeição**.     
+👨‍🎓 Estudando **Phyton**, **Java**, **Erlang** e **Django**.
   
   ##
  
