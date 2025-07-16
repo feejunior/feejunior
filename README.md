@@ -6,7 +6,6 @@
 </div>
 
 🔭 [Kontrl Tech](https://kontrl.tech/).  
-✍️ Atualmente trabalhando com **Testes Automatizados e Manuais** buscando sempre a melhoria da **Qualidade** e a **Perfeição**.     
 👨‍🎓 Estudando **Phyton**, **Java**, **Erlang** e **Django**.
   
   ##
