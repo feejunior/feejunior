@@ -6,7 +6,7 @@
 </div>
 
 🔭 [Kontrl Tech](https://kontrl.tech/).  
-👨‍🎓 Estudando **Phyton**, **Java**, **Erlang** e **Django**.
+👨‍🎓 **Phyton**, **Java**, **Erlang** e **Django**.
   
   ##
  
