@@ -6,7 +6,7 @@
 </div>
 
 🔭 [Kontrl Tech](https://kontrl.tech/).      
-💻 **Cypress**, **Maestro**,**K6** e **JavaScript**.      
+💻 **Cypress**, **Maestro**, **K6** e **JavaScript**.      
 👨‍🎓 **Phyton** e **JavaScript**.      
   
   ##
