@@ -7,7 +7,7 @@
 
 🔭 [Kontrl Tech](https://kontrl.tech/).      
 💻 **Python**, **Java**, **Cypress** e **Maestro**.      
-👨‍🎓 **Java** e **JavaScript**.      
+👨‍🎓 **JavaScript** e **TypeScript**.      
   
   ##
  
