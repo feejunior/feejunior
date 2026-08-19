@@ -6,8 +6,8 @@
 </div>
 
 🔭 [Kontrl Tech](https://kontrl.tech/).      
-💻 **Python**, **Java**, **Cypress** e **Maestro**.      
-👨‍🎓 **JavaScript** e **TypeScript**.      
+💻 **Java**, **Python**, **JavaScript** e **TypeScript**.      
+👨‍🎓 **MBA** em **Cibersegurança**.      
   
   ##
  
