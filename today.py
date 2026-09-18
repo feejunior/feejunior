@@ -31,7 +31,7 @@ def get_account_stats(username, token):
     }
     """
     data = run_query(query, {"login": username}, token)["data"]["user"]
-    total_stars = sum(repo["stargazerCount"] for repo in data["repositories
+    total_stars = sum(repo["stargazerCount"] for repo in data["repositories"]["nodes"])
     created_at = datetime.datetime.strptime(data["createdAt"], "%Y-%m-%dT%H:%M:%SZ")
     account_age = relativedelta.relativedelta(datetime.datetime.utcnow(), created_at)
     return {
