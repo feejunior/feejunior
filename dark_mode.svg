@@ -1,9 +1,51 @@
-<svg width="480" height="180" viewBox="0 0 480 180" xmlns="http://www.w3.org/2000/svg">
-  <rect width="480" height="180" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
-  <text x="24" y="36" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" fill="#c9d1d9">Felipe Junior · GitHub Stats</text>
-  <text x="24" y="70" font-family="Segoe UI, sans-serif" font-size="14" fill="#c9d1d9">Commits este ano: 232</text>
-  <text x="24" y="95" font-family="Segoe UI, sans-serif" font-size="14" fill="#c9d1d9">Repositórios públicos: 9</text>
-  <text x="24" y="120" font-family="Segoe UI, sans-serif" font-size="14" fill="#c9d1d9">Estrelas recebidas: 4</text>
-  <text x="24" y="145" font-family="Segoe UI, sans-serif" font-size="14" fill="#c9d1d9">Seguidores: 8</text>
-  <text x="24" y="168" font-family="Segoe UI, sans-serif" font-size="12" fill="#8b949e">No GitHub há 3 anos, 4 meses</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" font-family="Consolas, 'DejaVu Sans Mono', monospace" width="942px" height="450px" font-size="16px">
+<style>
+.key {fill: #ffa657;}
+.value {fill: #a5d6ff;}
+.dots {fill: #616e7f;}
+text, tspan {white-space: pre;}
+</style>
+<rect width="942px" height="450px" fill="#161b22" rx="15"/>
+<text fill="#c9d1d9" xml:space="preserve">
+<tspan x="15" y="30">########=...........:+**##############</tspan>
+<tspan x="15" y="50">####*-.........-==+++:....:*##########</tspan>
+<tspan x="15" y="70">##*-...... ..:=++=====++:....=########</tspan>
+<tspan x="15" y="90">#+:.......-+##########*=--:....-######</tspan>
+<tspan x="15" y="110">*-......------=+**#%%%##*=:......=####</tspan>
+<tspan x="15" y="130">-.... .:-==+==--=====+*###=.......:###</tspan>
+<tspan x="15" y="150">:... .---::..-:-+*+=----+#*.   .....+#</tspan>
+<tspan x="15" y="170">:.. .-+++=---=+**##=------+:   .....:*</tspan>
+<tspan x="15" y="190">:...:==+*###**++++++:..--=-:    .....+</tspan>
+<tspan x="15" y="210">..:.-==+*##*+=:-=-:=+=-::--.    .....-</tspan>
+<tspan x="15" y="230">.+-:-=+**###++====-=***+++:       ...-</tspan>
+<tspan x="15" y="250">:=:--==+++=+======+#****+=       ...:+</tspan>
+<tspan x="15" y="270">. :---=++++++==---=****+=-      ...-=#</tspan>
+<tspan x="15" y="290">:.::--==++++========+++=-:       .-+##</tspan>
+<tspan x="15" y="310">:.::--==+***+++++++=++==*:      ::####</tspan>
+<tspan x="15" y="330">::.:::-=+++++++*++====-=.     .:-#####</tspan>
+<tspan x="15" y="350">::::..::-----==+++===-..... ::::######</tspan>
+<tspan x="15" y="370">::::.....:::::::-----.:=:.:.:::+####%#</tspan>
+<tspan x="15" y="390">:::.::...........:-:::=:..::::*####%*-</tspan>
+</text>
+<text fill="#c9d1d9" xml:space="preserve">
+<tspan x="409" y="30">felipe@junior</tspan> <tspan class="dots">----------------------------------------</tspan>
+<tspan x="409" y="70" class="key">- Perfil</tspan> <tspan class="dots">---------------------------------------------</tspan>
+<tspan x="409" y="90" class="dots">. </tspan><tspan class="key">Role</tspan>:<tspan class="dots"> ........................ </tspan><tspan class="value">Desenvolvedor Backend</tspan>
+<tspan x="409" y="110" class="dots">. </tspan><tspan class="key">Stack</tspan>:<tspan class="dots"> ........... </tspan><tspan class="value">Python, Django, JavaScript, MySQL</tspan>
+<tspan x="409" y="130" class="dots">. </tspan><tspan class="key">Testes</tspan>:<tspan class="dots"> .............. </tspan><tspan class="value">Cypress, Maestro, K6, Postman</tspan>
+<tspan x="409" y="150" class="dots">. </tspan><tspan class="key">Métodos</tspan>:<tspan class="dots"> ............................. </tspan><tspan class="value">Scrum, Kanban</tspan>
+<tspan x="409" y="170" class="dots">. </tspan><tspan class="key">Estudando</tspan>:<tspan class="dots"> .................................... </tspan><tspan class="value">Java</tspan>
+<tspan x="409" y="190" class="dots">. </tspan><tspan class="key">Formação</tspan>:<tspan class="dots"> ................... </tspan><tspan class="value">Engenharia Aeronáutica</tspan>
+<tspan x="409" y="210" class="dots">. </tspan><tspan class="key">Local</tspan>:<tspan class="dots"> ..................... </tspan><tspan class="value">São José dos Campos, SP</tspan>
+<tspan x="409" y="250" class="key">- GitHub</tspan> <tspan class="dots">---------------------------------------------</tspan>
+<tspan x="409" y="270" class="dots">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="dots"> ............................ </tspan><tspan class="value">3 anos, 4 meses</tspan>
+<tspan x="409" y="290" class="dots">. </tspan><tspan class="key">Repos</tspan>:<tspan class="dots"> ........................................... </tspan><tspan class="value">9</tspan>
+<tspan x="409" y="310" class="dots">. </tspan><tspan class="key">Commits (ano)</tspan>:<tspan class="dots"> ................................. </tspan><tspan class="value">233</tspan>
+<tspan x="409" y="330" class="dots">. </tspan><tspan class="key">Stars</tspan>:<tspan class="dots"> ........................................... </tspan><tspan class="value">4</tspan>
+<tspan x="409" y="350" class="dots">. </tspan><tspan class="key">Seguidores</tspan>:<tspan class="dots"> ...................................... </tspan><tspan class="value">8</tspan>
+<tspan x="409" y="390" class="key">- Contato</tspan> <tspan class="dots">--------------------------------------------</tspan>
+<tspan x="409" y="410" class="dots">. </tspan><tspan class="key">LinkedIn</tspan>:<tspan class="dots"> ................ </tspan><tspan class="value">linkedin.com/in/feejunior</tspan>
+<tspan x="409" y="430" class="dots">. </tspan><tspan class="key">GitHub</tspan>:<tspan class="dots"> ....................... </tspan><tspan class="value">github.com/feejunior</tspan>
+</text>
 </svg>
