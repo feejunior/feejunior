@@ -43,15 +43,54 @@ def run_query(query, variables, token):
     return result
 
 
+def get_repo_history(owner, name, author_id, token):
+    query = """
+    query($owner: String!, $name: String!, $author: ID!, $cursor: String) {
+      repository(owner: $owner, name: $name) {
+        defaultBranchRef {
+          target {
+            ... on Commit {
+              history(first: 100, after: $cursor, author: {id: $author}) {
+                pageInfo { hasNextPage endCursor }
+                nodes { additions deletions }
+              }
+            }
+          }
+        }
+      }
+    }
+    """
+    commits = additions = deletions = 0
+    cursor = None
+    while True:
+        variables = {"owner": owner, "name": name, "author": author_id, "cursor": cursor}
+        branch = run_query(query, variables, token)["data"]["repository"]["defaultBranchRef"]
+        if branch is None:
+            break
+        history = branch["target"]["history"]
+        for node in history["nodes"]:
+            additions += node["additions"]
+            deletions += node["deletions"]
+        commits += len(history["nodes"])
+        if not history["pageInfo"]["hasNextPage"]:
+            break
+        cursor = history["pageInfo"]["endCursor"]
+    return commits, additions, deletions
+
+
 def get_account_stats(username, token):
     query = """
     query($login: String!) {
       user(login: $login) {
+        id
         createdAt
         followers { totalCount }
-        repositories(first: 100, ownerAffiliations: OWNER, isFork: false) {
+        owned: repositories(first: 100, ownerAffiliations: OWNER, isFork: false) {
           totalCount
-          nodes { stargazerCount }
+          nodes { nameWithOwner stargazerCount }
+        }
+        contributed: repositories(ownerAffiliations: [OWNER, COLLABORATOR, ORGANIZATION_MEMBER]) {
+          totalCount
         }
         contributionsCollection {
           contributionCalendar { totalContributions }
@@ -60,16 +99,31 @@ def get_account_stats(username, token):
     }
     """
     data = run_query(query, {"login": username}, token)["data"]["user"]
-    total_stars = sum(repo["stargazerCount"] for repo in data["repositories"]["nodes"])
+    repos = data["owned"]["nodes"]
+    total_commits = loc_add = loc_del = 0
+    for repo in repos:
+        owner, name = repo["nameWithOwner"].split("/")
+        commits, additions, deletions = get_repo_history(owner, name, data["id"], token)
+        total_commits += commits
+        loc_add += additions
+        loc_del += deletions
     created_at = datetime.datetime.strptime(data["createdAt"], "%Y-%m-%dT%H:%M:%SZ")
     account_age = relativedelta.relativedelta(datetime.datetime.utcnow(), created_at)
     return {
         "commits": data["contributionsCollection"]["contributionCalendar"]["totalContributions"],
-        "repos": data["repositories"]["totalCount"],
-        "stars": total_stars,
+        "commits_total": total_commits,
+        "repos": data["owned"]["totalCount"],
+        "contributed": data["contributed"]["totalCount"],
+        "stars": sum(repo["stargazerCount"] for repo in repos),
         "followers": data["followers"]["totalCount"],
+        "loc_add": loc_add,
+        "loc_del": loc_del,
         "account_age": f"{account_age.years} anos, {account_age.months} meses",
     }
+
+
+def fmt(number):
+    return f"{number:,}".replace(",", ".")
 
 
 def read_ascii():
@@ -82,10 +136,12 @@ def read_ascii():
 def build_info(stats):
     github = [
         ("Uptime", stats["account_age"]),
-        ("Repos", str(stats["repos"])),
-        ("Commits (ano)", str(stats["commits"])),
-        ("Stars", str(stats["stars"])),
-        ("Seguidores", str(stats["followers"])),
+        ("Repos", f"{fmt(stats['repos'])} (contribuídos: {fmt(stats['contributed'])})"),
+        ("Commits", fmt(stats["commits_total"])),
+        ("Commits (ano)", fmt(stats["commits"])),
+        ("Stars", fmt(stats["stars"])),
+        ("Seguidores", fmt(stats["followers"])),
+        ("Linhas de código", f"{fmt(stats['loc_add'] - stats['loc_del'])} (+{fmt(stats['loc_add'])}, -{fmt(stats['loc_del'])})"),
     ]
     info = [("header", HOSTNAME)]
     for title, items in (("felipe@junior", PROFILE), ("GitHub", github), ("CONTACT", CONTACT)):
