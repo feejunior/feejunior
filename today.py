@@ -22,7 +22,7 @@ PROFILE = [
     ("Role", "Software Engineer"),
     ("Stack", "Python, Django, JavaScript, TypeScript, MySQL"),
     ("OS", "Linux, Windows"),
-    ("Host", "FreeAgent'),
+    ("Host", "FreeAgent"),
     ("Learning", "Java - RocketSeat"),
 ]
 
