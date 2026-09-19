@@ -1,0 +1,9 @@
+<svg width="480" height="180" viewBox="0 0 480 180" xmlns="http://www.w3.org/2000/svg">
+  <rect width="480" height="180" rx="12" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="24" y="36" font-family="Segoe UI, sans-serif" font-size="18" font-weight="700" fill="#c9d1d9">Felipe Junior · GitHub Stats</text>
+  <text x="24" y="70" font-family="Segoe UI, sans-serif" font-size="14" fill="#c9d1d9">Commits este ano: 230</text>
+  <text x="24" y="95" font-family="Segoe UI, sans-serif" font-size="14" fill="#c9d1d9">Repositórios públicos: 9</text>
+  <text x="24" y="120" font-family="Segoe UI, sans-serif" font-size="14" fill="#c9d1d9">Estrelas recebidas: 4</text>
+  <text x="24" y="145" font-family="Segoe UI, sans-serif" font-size="14" fill="#c9d1d9">Seguidores: 8</text>
+  <text x="24" y="168" font-family="Segoe UI, sans-serif" font-size="12" fill="#8b949e">No GitHub há 3 anos, 4 meses</text>
+</svg>
