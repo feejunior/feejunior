@@ -23,7 +23,7 @@ def get_account_stats(username, token):
       user(login: $login) {
         createdAt
         followers { totalCount }
-        repositories(first: 100, ownerAffiliation: OWNER, isFork: false) {
+        repositories(first: 100, ownerAffiliations: OWNER, isFork: false) {
           totalCount
           nodes { stargazerCount }
         }
