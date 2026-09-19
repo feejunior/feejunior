@@ -118,7 +118,7 @@ def get_account_stats(username, token):
         "followers": data["followers"]["totalCount"],
         "loc_add": loc_add,
         "loc_del": loc_del,
-        "account_age": f"{account_age.years} anos, {account_age.months} meses",
+        "account_age": f"{account_age.years} years, {account_age.months} months",
     }
 
 
@@ -138,11 +138,11 @@ def build_info(stats):
         ("Uptime", stats["account_age"]),
         ("Repos", f"{fmt(stats['repos'])} (contribuídos: {fmt(stats['contributed'])})"),
         ("Commits", fmt(stats["commits_total"])),
-        ("Commits (ano)", fmt(stats["commits"])),
+        ("Commits (year)", fmt(stats["commits"])),
         ("Stars", fmt(stats["stars"])),
-        ("Seguidores", fmt(stats["followers"])),
+        ("Followers", fmt(stats["followers"])),
         (
-            "Linhas de código",
+            "Lines",
             [
                 (f"{fmt(stats['loc_add'] - stats['loc_del'])} (", "value"),
                 (f"+{fmt(stats['loc_add'])}", "add"),
