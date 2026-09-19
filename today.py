@@ -10,8 +10,10 @@ def run_query(query, variables, token):
     headers = {"Authorization": f"token {token}"}
     response = requests.post(GRAPHQL_URL, json={"query": query, "variables": variables}, headers=headers)
     if response.status_code != 200:
-        raise Exception(f"Query failed: {response.status_code} {response.text}")
-    return response.json()
+        result = response.json()
+    if "errors" in result:
+        raise Exception(f"GraphQL errors: {result['errors']}")
+    return result
 
 
 def get_account_stats(username, token):
