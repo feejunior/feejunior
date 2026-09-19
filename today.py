@@ -14,8 +14,8 @@ ASCII_FILE = "ascii.txt"
 HOSTNAME = "felipe@junior"
 
 THEMES = {
-    "dark": {"bg": "#161b22", "text": "#c9d1d9", "key": "#ffa657", "value": "#a5d6ff", "dots": "#616e7f"},
-    "light": {"bg": "#f6f8fa", "text": "#24292f", "key": "#953800", "value": "#0a3069", "dots": "#8c959f"},
+    "dark": {"bg": "#161b22", "text": "#c9d1d9", "key": "#ffa657", "value": "#a5d6ff", "dots": "#616e7f", "add": "#3fb950", "del": "#f85149"},
+    "light": {"bg": "#f6f8fa", "text": "#24292f", "key": "#953800", "value": "#0a3069", "dots": "#c2cfde", "add": "#1a7f37", "del": "#cf222e"},
 }
 
 PROFILE = [
@@ -141,7 +141,16 @@ def build_info(stats):
         ("Commits (ano)", fmt(stats["commits"])),
         ("Stars", fmt(stats["stars"])),
         ("Seguidores", fmt(stats["followers"])),
-        ("Linhas de código", f"{fmt(stats['loc_add'] - stats['loc_del'])} (+{fmt(stats['loc_add'])}, -{fmt(stats['loc_del'])})"),
+        (
+            "Linhas de código",
+            [
+                (f"{fmt(stats['loc_add'] - stats['loc_del'])} (", "value"),
+                (f"+{fmt(stats['loc_add'])}", "add"),
+                (", ", "value"),
+                (f"-{fmt(stats['loc_del'])}", "del"),
+                (")", "value"),
+            ],
+        ),
     ]
     info = [("header", HOSTNAME)]
     for title, items in (("felipe@junior", PROFILE), ("GitHub", github), ("CONTACT", CONTACT)):
@@ -152,11 +161,19 @@ def build_info(stats):
     return info
 
 
+def as_segments(value):
+    return value if isinstance(value, list) else [(value, "value")]
+
+
 def build_svg(theme, art_lines, info):
     c = THEMES[theme]
     art_cols = max((len(line) for line in art_lines), default=0)
+    line_chars = max(
+        [LINE_CHARS]
+        + [len(row[1]) + sum(len(t) for t, _ in as_segments(row[2])) + 7 for row in info if row[0] == "item"]
+    )
     info_x = int(15 + art_cols * CHAR_W + 30)
-    width = int(info_x + LINE_CHARS * CHAR_W + 15)
+    width = int(info_x + line_chars * CHAR_W + 15)
     rows = max(len(art_lines), len(info))
     height = rows * LINE_HEIGHT + 30
 
@@ -167,6 +184,8 @@ def build_svg(theme, art_lines, info):
         f".key {{fill: {c['key']};}}",
         f".value {{fill: {c['value']};}}",
         f".dots {{fill: {c['dots']};}}",
+        f".add {{fill: {c['add']};}}",
+        f".del {{fill: {c['del']};}}",
         "text, tspan {white-space: pre;}",
         "</style>",
         f'<rect width="{width}px" height="{height}px" fill="{c["bg"]}" rx="15"/>',
@@ -183,19 +202,22 @@ def build_svg(theme, art_lines, info):
         y = 30 + i * LINE_HEIGHT
         kind = row[0]
         if kind == "header":
-            fill = "-" * max(3, LINE_CHARS - len(row[1]) - 1)
+            fill = "-" * max(3, line_chars - len(row[1]) - 1)
             out.append(f'<tspan x="{info_x}" y="{y}">{escape(row[1])}</tspan> <tspan class="dots">{fill}</tspan>')
         elif kind == "title":
-            fill = "-" * max(3, LINE_CHARS - len(row[1]) - 3)
+            fill = "-" * max(3, line_chars - len(row[1]) - 3)
             out.append(f'<tspan x="{info_x}" y="{y}" class="key">- {escape(row[1])}</tspan> <tspan class="dots">{fill}</tspan>')
         elif kind == "item":
             key, value = row[1], row[2]
-            dots = "." * max(2, LINE_CHARS - len(key) - len(value) - 5)
+            segments = as_segments(value)
+            length = sum(len(text) for text, _ in segments)
+            dots = "." * max(2, line_chars - len(key) - length - 5)
+            spans = "".join(f'<tspan class="{cls}">{escape(text)}</tspan>' for text, cls in segments)
             out.append(
                 f'<tspan x="{info_x}" y="{y}" class="dots">. </tspan>'
                 f'<tspan class="key">{escape(key)}</tspan>:'
                 f'<tspan class="dots"> {dots} </tspan>'
-                f'<tspan class="value">{escape(value)}</tspan>'
+                + spans
             )
     out.append("</text>")
     out.append("</svg>")
