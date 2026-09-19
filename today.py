@@ -19,18 +19,16 @@ THEMES = {
 }
 
 PROFILE = [
-    ("Role", "Desenvolvedor Backend"),
-    ("Stack", "Python, Django, JavaScript, MySQL"),
-    ("Testes", "Cypress, Maestro, K6, Postman"),
-    ("Métodos", "Scrum, Kanban"),
-    ("Estudando", "Java"),
-    ("Formação", "Engenharia Aeronáutica"),
-    ("Local", "São José dos Campos, SP"),
+    ("Role", "Software Engineer"),
+    ("Stack", "Python, Django, JavaScript, TypeScript, MySQL"),
+    ("OS", "Linux, Windows"),
+    ("Host", "FreeAgent'),
+    ("Learning", "Java - RocketSeat"),
 ]
 
 CONTACT = [
+    ("Portfolio", "https://feejunior.com.br"),
     ("LinkedIn", "linkedin.com/in/feejunior"),
-    ("GitHub", "github.com/feejunior"),
 ]
 
 
@@ -90,7 +88,7 @@ def build_info(stats):
         ("Seguidores", str(stats["followers"])),
     ]
     info = [("header", HOSTNAME)]
-    for title, items in (("Perfil", PROFILE), ("GitHub", github), ("Contato", CONTACT)):
+    for title, items in (("felipe@junior", PROFILE), ("GitHub", github), ("CONTACT", CONTACT)):
         info.append(("blank",))
         info.append(("title", title))
         for key, value in items:
