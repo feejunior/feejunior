@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" font-family="Consolas, 'DejaVu Sans Mono', monospace" width="942px" height="450px" font-size="16px">
+<svg xmlns="http://www.w3.org/2000/svg" font-family="Consolas, 'DejaVu Sans Mono', monospace" width="971px" height="450px" font-size="16px">
 <style>
 .key {fill: #ffa657;}
 .value {fill: #a5d6ff;}
 .dots {fill: #616e7f;}
+.add {fill: #3fb950;}
+.del {fill: #f85149;}
 text, tspan {white-space: pre;}
 </style>
-<rect width="942px" height="450px" fill="#161b22" rx="15"/>
+<rect width="971px" height="450px" fill="#161b22" rx="15"/>
 <text fill="#c9d1d9" xml:space="preserve">
 <tspan x="15" y="30">########=...........:+**##############</tspan>
 <tspan x="15" y="50">####*-.........-==+++:....:*##########</tspan>
@@ -29,23 +31,23 @@ text, tspan {white-space: pre;}
 <tspan x="15" y="390">:::.::...........:-:::=:..::::*####%*-</tspan>
 </text>
 <text fill="#c9d1d9" xml:space="preserve">
-<tspan x="409" y="30">felipe@junior</tspan> <tspan class="dots">----------------------------------------</tspan>
-<tspan x="409" y="70" class="key">- felipe@junior</tspan> <tspan class="dots">--------------------------------------</tspan>
-<tspan x="409" y="90" class="dots">. </tspan><tspan class="key">Role</tspan>:<tspan class="dots"> ............................ </tspan><tspan class="value">Software Engineer</tspan>
+<tspan x="409" y="30">felipe@junior</tspan> <tspan class="dots">-------------------------------------------</tspan>
+<tspan x="409" y="70" class="key">- felipe@junior</tspan> <tspan class="dots">-----------------------------------------</tspan>
+<tspan x="409" y="90" class="dots">. </tspan><tspan class="key">Role</tspan>:<tspan class="dots"> ............................... </tspan><tspan class="value">Software Engineer</tspan>
 <tspan x="409" y="110" class="dots">. </tspan><tspan class="key">Stack</tspan>:<tspan class="dots"> .. </tspan><tspan class="value">Python, Django, JavaScript, TypeScript, MySQL</tspan>
-<tspan x="409" y="130" class="dots">. </tspan><tspan class="key">OS</tspan>:<tspan class="dots"> ................................. </tspan><tspan class="value">Linux, Windows</tspan>
-<tspan x="409" y="150" class="dots">. </tspan><tspan class="key">Host</tspan>:<tspan class="dots"> .................................... </tspan><tspan class="value">FreeAgent</tspan>
-<tspan x="409" y="170" class="dots">. </tspan><tspan class="key">Learning</tspan>:<tspan class="dots"> ........................ </tspan><tspan class="value">Java - RocketSeat</tspan>
-<tspan x="409" y="210" class="key">- GitHub</tspan> <tspan class="dots">---------------------------------------------</tspan>
-<tspan x="409" y="230" class="dots">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="dots"> ............................ </tspan><tspan class="value">3 anos, 4 meses</tspan>
-<tspan x="409" y="250" class="dots">. </tspan><tspan class="key">Repos</tspan>:<tspan class="dots"> ........................ </tspan><tspan class="value">9 (contribuídos: 10)</tspan>
-<tspan x="409" y="270" class="dots">. </tspan><tspan class="key">Commits</tspan>:<tspan class="dots"> ....................................... </tspan><tspan class="value">160</tspan>
-<tspan x="409" y="290" class="dots">. </tspan><tspan class="key">Commits (ano)</tspan>:<tspan class="dots"> ................................. </tspan><tspan class="value">238</tspan>
-<tspan x="409" y="310" class="dots">. </tspan><tspan class="key">Stars</tspan>:<tspan class="dots"> ........................................... </tspan><tspan class="value">4</tspan>
-<tspan x="409" y="330" class="dots">. </tspan><tspan class="key">Seguidores</tspan>:<tspan class="dots"> ...................................... </tspan><tspan class="value">8</tspan>
-<tspan x="409" y="350" class="dots">. </tspan><tspan class="key">Linhas de código</tspan>:<tspan class="dots"> ............. </tspan><tspan class="value">3.483 (+3.886, -403)</tspan>
-<tspan x="409" y="390" class="key">- CONTACT</tspan> <tspan class="dots">--------------------------------------------</tspan>
-<tspan x="409" y="410" class="dots">. </tspan><tspan class="key">Portfolio</tspan>:<tspan class="dots"> ................ </tspan><tspan class="value">https://feejunior.com.br</tspan>
-<tspan x="409" y="430" class="dots">. </tspan><tspan class="key">LinkedIn</tspan>:<tspan class="dots"> ................ </tspan><tspan class="value">linkedin.com/in/feejunior</tspan>
+<tspan x="409" y="130" class="dots">. </tspan><tspan class="key">OS</tspan>:<tspan class="dots"> .................................... </tspan><tspan class="value">Linux, Windows</tspan>
+<tspan x="409" y="150" class="dots">. </tspan><tspan class="key">Host</tspan>:<tspan class="dots"> ....................................... </tspan><tspan class="value">FreeAgent</tspan>
+<tspan x="409" y="170" class="dots">. </tspan><tspan class="key">Learning</tspan>:<tspan class="dots"> ........................... </tspan><tspan class="value">Java - RocketSeat</tspan>
+<tspan x="409" y="210" class="key">- GitHub</tspan> <tspan class="dots">------------------------------------------------</tspan>
+<tspan x="409" y="230" class="dots">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="dots"> ............................... </tspan><tspan class="value">3 anos, 4 meses</tspan>
+<tspan x="409" y="250" class="dots">. </tspan><tspan class="key">Repos</tspan>:<tspan class="dots"> ........................... </tspan><tspan class="value">9 (contribuídos: 10)</tspan>
+<tspan x="409" y="270" class="dots">. </tspan><tspan class="key">Commits</tspan>:<tspan class="dots"> .......................................... </tspan><tspan class="value">161</tspan>
+<tspan x="409" y="290" class="dots">. </tspan><tspan class="key">Commits (ano)</tspan>:<tspan class="dots"> .................................... </tspan><tspan class="value">239</tspan>
+<tspan x="409" y="310" class="dots">. </tspan><tspan class="key">Stars</tspan>:<tspan class="dots"> .............................................. </tspan><tspan class="value">4</tspan>
+<tspan x="409" y="330" class="dots">. </tspan><tspan class="key">Seguidores</tspan>:<tspan class="dots"> ......................................... </tspan><tspan class="value">8</tspan>
+<tspan x="409" y="350" class="dots">. </tspan><tspan class="key">Linhas de código</tspan>:<tspan class="dots"> ................ </tspan><tspan class="value">3.505 (</tspan><tspan class="add">+3.916</tspan><tspan class="value">, </tspan><tspan class="del">-411</tspan><tspan class="value">)</tspan>
+<tspan x="409" y="390" class="key">- CONTACT</tspan> <tspan class="dots">-----------------------------------------------</tspan>
+<tspan x="409" y="410" class="dots">. </tspan><tspan class="key">Portfolio</tspan>:<tspan class="dots"> ................... </tspan><tspan class="value">https://feejunior.com.br</tspan>
+<tspan x="409" y="430" class="dots">. </tspan><tspan class="key">LinkedIn</tspan>:<tspan class="dots"> ................... </tspan><tspan class="value">linkedin.com/in/feejunior</tspan>
 </text>
 </svg>
