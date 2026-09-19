@@ -24,7 +24,7 @@ jobs:
 
       - name: Gerar SVGs atualizados
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PROFILE_TOKEN }}
           GH_USERNAME: ${{ github.repository_owner }}
         run: python today.py
 
