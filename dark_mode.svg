@@ -41,11 +41,12 @@ text, tspan {white-space: pre;}
 <tspan x="384" y="130" class="dots">. </tspan><tspan class="key">Host</tspan>:<tspan class="dots"> ........................................ </tspan><tspan class="value">FreeAgent</tspan>
 <tspan x="384" y="150" class="dots">. </tspan><tspan class="key">Learning</tspan>:<tspan class="dots"> ............................ </tspan><tspan class="value">Java - RocketSeat</tspan>
 <tspan x="384" y="190">- Contact</tspan> -——————————————————————————————————————————————-
-<tspan x="384" y="210" class="dots">. </tspan><tspan class="key">Portfolio</tspan>:<tspan class="dots"> .................... </tspan><tspan class="value">https://feejunior.com.br</tspan>
+<tspan x="384" y="210" class="dots">. </tspan><tspan class="key">Portfolio</tspan>:<tspan class="dots"> ............................ </tspan><tspan class="value">feejunior.com.br</tspan>
 <tspan x="384" y="230" class="dots">. </tspan><tspan class="key">LinkedIn</tspan>:<tspan class="dots"> .................... </tspan><tspan class="value">linkedin.com/in/feejunior</tspan>
-<tspan x="384" y="270">- GitHub Stats</tspan> -—————————————————————————————————————————-
-<tspan x="384" y="290" class="dots">. </tspan><tspan class="key">Repos</tspan>:<tspan class="dots"> ... </tspan><tspan class="value">11</tspan> {<tspan class="key">Contributed</tspan>: <tspan class="value">11</tspan>} | <tspan class="key">Stars</tspan>:<tspan class="dots"> ............. </tspan><tspan class="value">4</tspan>
-<tspan x="384" y="310" class="dots">. </tspan><tspan class="key">Commits</tspan>:<tspan class="dots"> .................. </tspan><tspan class="value">172</tspan> | <tspan class="key">Followers</tspan>:<tspan class="dots"> ......... </tspan><tspan class="value">8</tspan>
-<tspan x="384" y="330" class="dots">. </tspan><tspan class="key">Lines of Code on GitHub</tspan>:<tspan class="dots"> ...... </tspan><tspan class="value">4.167</tspan> ( <tspan class="add">4.771</tspan><tspan class="add">++</tspan>, <tspan class="del">604</tspan><tspan class="del">--</tspan> )
+<tspan x="384" y="250" class="dots">. </tspan><tspan class="key">E-mail</tspan>:<tspan class="dots"> .......................... </tspan><tspan class="value">felipegd.jr@gmail.com</tspan>
+<tspan x="384" y="290">- GitHub Stats</tspan> -—————————————————————————————————————————-
+<tspan x="384" y="310" class="dots">. </tspan><tspan class="key">Repos</tspan>:<tspan class="dots"> ... </tspan><tspan class="value">11</tspan> {<tspan class="key">Contributed</tspan>: <tspan class="value">11</tspan>} | <tspan class="key">Stars</tspan>:<tspan class="dots"> ............. </tspan><tspan class="value">4</tspan>
+<tspan x="384" y="330" class="dots">. </tspan><tspan class="key">Commits</tspan>:<tspan class="dots"> .................. </tspan><tspan class="value">173</tspan> | <tspan class="key">Followers</tspan>:<tspan class="dots"> ......... </tspan><tspan class="value">8</tspan>
+<tspan x="384" y="350" class="dots">. </tspan><tspan class="key">Lines of Code on GitHub</tspan>:<tspan class="dots"> ...... </tspan><tspan class="value">4.168</tspan> ( <tspan class="add">4.773</tspan><tspan class="add">++</tspan>, <tspan class="del">605</tspan><tspan class="del">--</tspan> )
 </text>
 </svg>
