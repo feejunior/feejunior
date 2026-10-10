@@ -27,8 +27,9 @@ PROFILE = [
 ]
 
 CONTACT = [
-    ("Portfolio", "https://feejunior.com.br"),
+    ("Portfolio", "feejunior.com.br"),
     ("LinkedIn", "linkedin.com/in/feejunior"),
+    ("E-mail", "felipegd.jr@gmail.com"),
 ]
 
 
