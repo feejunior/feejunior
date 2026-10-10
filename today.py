@@ -7,7 +7,7 @@ from dateutil import relativedelta
 
 GRAPHQL_URL = "https://api.github.com/graphql"
 FONT = "Consolas, 'DejaVu Sans Mono', monospace"
-CHAR_W = 9.6
+CHAR_W = 9.7
 LINE_HEIGHT = 20
 LINE_CHARS = 54
 ASCII_FILE = "ascii.txt"
@@ -184,11 +184,11 @@ def render_segments(value):
     )
 
 
-def render_cell(key, value, width, prefix):
+def render_cell(key, value, width, prefix, pos=""):
     # prefix + key + ":" + " " + dots + " " + value == width
     dots = "." * max(1, width - len(prefix) - len(key) - seg_len(value) - 3)
     return (
-        f'<tspan class="dots">{prefix}</tspan>' if prefix else ""
+        f'<tspan{pos} class="dots">{prefix}</tspan>' if prefix else ""
     ) + f'<tspan class="key">{escape(key)}</tspan>:<tspan class="dots"> {dots} </tspan>' + render_segments(value)
 
 
@@ -242,11 +242,10 @@ def build_svg(theme, art_lines, info):
             rule = "-" + "\u2014" * max(3, line_chars - len(row[1]) - 3) + "-"
             out.append(f'<tspan x="{info_x}" y="{y}">{escape(row[1])}</tspan> {rule}')
         elif kind == "item":
-            out.append(f'<tspan x="{info_x}" y="{y}"></tspan>' + render_cell(row[1], row[2], line_chars, ". "))
+            out.append(render_cell(row[1], row[2], line_chars, ". ", f' x="{info_x}" y="{y}"'))
         elif kind == "pair":
             out.append(
-                f'<tspan x="{info_x}" y="{y}"></tspan>'
-                + render_cell(*row[1], left_w, ". ")
+                render_cell(*row[1], left_w, ". ", f' x="{info_x}" y="{y}"')
                 + " | "
                 + render_cell(*row[2], right_w, "")
             )
