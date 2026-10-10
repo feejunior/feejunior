@@ -78,6 +78,29 @@ def get_repo_history(owner, name, author_id, token):
     return commits, additions, deletions
 
 
+def get_repos(username, affiliations, token):
+    query = """
+    query($login: String!, $affiliations: [RepositoryAffiliation], $cursor: String) {
+      user(login: $login) {
+        repositories(first: 100, after: $cursor, ownerAffiliations: $affiliations) {
+          totalCount
+          pageInfo { hasNextPage endCursor }
+          nodes { nameWithOwner stargazerCount }
+        }
+      }
+    }
+    """
+    repos = []
+    cursor = None
+    while True:
+        variables = {"login": username, "affiliations": affiliations, "cursor": cursor}
+        page = run_query(query, variables, token)["data"]["user"]["repositories"]
+        repos += page["nodes"]
+        if not page["pageInfo"]["hasNextPage"]:
+            return page["totalCount"], repos
+        cursor = page["pageInfo"]["endCursor"]
+
+
 def get_account_stats(username, token):
     query = """
     query($login: String!) {
@@ -85,23 +108,14 @@ def get_account_stats(username, token):
         id
         createdAt
         followers { totalCount }
-        owned: repositories(first: 100, ownerAffiliations: OWNER, isFork: false) {
-          totalCount
-          nodes { nameWithOwner stargazerCount }
-        }
-        contributed: repositories(ownerAffiliations: [OWNER, COLLABORATOR, ORGANIZATION_MEMBER]) {
-          totalCount
-        }
-        contributionsCollection {
-          contributionCalendar { totalContributions }
-        }
       }
     }
     """
     data = run_query(query, {"login": username}, token)["data"]["user"]
-    repos = data["owned"]["nodes"]
+    owned_count, owned = get_repos(username, ["OWNER"], token)
+    contributed_count, contributed = get_repos(username, ["OWNER", "COLLABORATOR", "ORGANIZATION_MEMBER"], token)
     total_commits = loc_add = loc_del = 0
-    for repo in repos:
+    for repo in contributed:
         owner, name = repo["nameWithOwner"].split("/")
         commits, additions, deletions = get_repo_history(owner, name, data["id"], token)
         total_commits += commits
@@ -110,15 +124,14 @@ def get_account_stats(username, token):
     created_at = datetime.datetime.strptime(data["createdAt"], "%Y-%m-%dT%H:%M:%SZ")
     account_age = relativedelta.relativedelta(datetime.datetime.utcnow(), created_at)
     return {
-        "commits": data["contributionsCollection"]["contributionCalendar"]["totalContributions"],
-        "commits_total": total_commits,
-        "repos": data["owned"]["totalCount"],
-        "contributed": data["contributed"]["totalCount"],
-        "stars": sum(repo["stargazerCount"] for repo in repos),
+        "commits": total_commits,
+        "repos": owned_count,
+        "contributed": contributed_count,
+        "stars": sum(repo["stargazerCount"] for repo in owned),
         "followers": data["followers"]["totalCount"],
         "loc_add": loc_add,
         "loc_del": loc_del,
-        "account_age": f"{account_age.years} years, {account_age.months} months",
+        "account_age": f"{account_age.years} years, {account_age.months} months, {account_age.days} days",
     }
 
 
@@ -134,30 +147,25 @@ def read_ascii():
 
 
 def build_info(stats):
+    profile = PROFILE[:2] + [("Uptime", stats["account_age"])] + PROFILE[2:]
     github = [
-        ("Uptime", stats["account_age"]),
-        ("Repos", f"{fmt(stats['repos'])} (contribuídos: {fmt(stats['contributed'])})"),
-        ("Commits", fmt(stats["commits_total"])),
-        ("Commits (year)", fmt(stats["commits"])),
-        ("Stars", fmt(stats["stars"])),
-        ("Followers", fmt(stats["followers"])),
-        (
-            "Lines",
-            [
-                (f"{fmt(stats['loc_add'] - stats['loc_del'])} (", "value"),
-                (f"+{fmt(stats['loc_add'])}", "add"),
-                (", ", "value"),
-                (f"-{fmt(stats['loc_del'])}", "del"),
-                (")", "value"),
-            ],
-        ),
+        ("pair",
+         ("Repos", [(fmt(stats["repos"]), "value"), (" {", None), ("Contributed", "key"), (": ", None),
+                    (fmt(stats["contributed"]), "value"), ("}", None)]),
+         ("Stars", fmt(stats["stars"]))),
+        ("pair", ("Commits", fmt(stats["commits"])), ("Followers", fmt(stats["followers"]))),
+        ("item", "Lines of Code on GitHub", [
+            (fmt(stats["loc_add"] - stats["loc_del"]), "value"), (" ( ", None),
+            (fmt(stats["loc_add"]), "add"), ("++", "add"), (", ", None),
+            (fmt(stats["loc_del"]), "del"), ("--", "del"), (" )", None),
+        ]),
     ]
     info = [("header", HOSTNAME)]
-    for title, items in (("felipe@junior", PROFILE), ("GitHub", github), ("CONTACT", CONTACT)):
+    info += [("item", key, value) for key, value in profile]
+    for title, rows in (("Contact", [("item", k, v) for k, v in CONTACT]), ("GitHub Stats", github)):
         info.append(("blank",))
-        info.append(("title", title))
-        for key, value in items:
-            info.append(("item", key, value))
+        info.append(("title", f"- {title}"))
+        info += rows
     return info
 
 
@@ -165,13 +173,41 @@ def as_segments(value):
     return value if isinstance(value, list) else [(value, "value")]
 
 
+def seg_len(value):
+    return sum(len(text) for text, _ in as_segments(value))
+
+
+def render_segments(value):
+    return "".join(
+        f'<tspan class="{cls}">{escape(text)}</tspan>' if cls else escape(text)
+        for text, cls in as_segments(value)
+    )
+
+
+def render_cell(key, value, width, prefix):
+    # prefix + key + ":" + " " + dots + " " + value == width
+    dots = "." * max(1, width - len(prefix) - len(key) - seg_len(value) - 3)
+    return (
+        f'<tspan class="dots">{prefix}</tspan>' if prefix else ""
+    ) + f'<tspan class="key">{escape(key)}</tspan>:<tspan class="dots"> {dots} </tspan>' + render_segments(value)
+
+
+def cell_min(key, value, prefix):
+    return len(prefix) + len(key) + seg_len(value) + 4
+
+
 def build_svg(theme, art_lines, info):
     c = THEMES[theme]
     art_cols = max((len(line) for line in art_lines), default=0)
+    items = [row for row in info if row[0] == "item"]
+    pairs = [row for row in info if row[0] == "pair"]
+    left_w = max([cell_min(*row[1], ". ") + 2 for row in pairs], default=0)
+    right_w = max([cell_min(*row[2], "") + 1 for row in pairs], default=0)
     line_chars = max(
-        [LINE_CHARS]
-        + [len(row[1]) + sum(len(t) for t, _ in as_segments(row[2])) + 7 for row in info if row[0] == "item"]
+        [LINE_CHARS, left_w + 3 + right_w]
+        + [cell_min(row[1], row[2], ". ") + 2 for row in items]
     )
+    right_w = line_chars - left_w - 3
     info_x = int(15 + art_cols * CHAR_W + 30)
     width = int(info_x + line_chars * CHAR_W + 15)
     rows = max(len(art_lines), len(info))
@@ -201,23 +237,18 @@ def build_svg(theme, art_lines, info):
     for i, row in enumerate(info):
         y = 30 + i * LINE_HEIGHT
         kind = row[0]
-        if kind == "header":
-            fill = "-" * max(3, line_chars - len(row[1]) - 1)
-            out.append(f'<tspan x="{info_x}" y="{y}">{escape(row[1])}</tspan> <tspan class="dots">{fill}</tspan>')
-        elif kind == "title":
-            fill = "-" * max(3, line_chars - len(row[1]) - 3)
-            out.append(f'<tspan x="{info_x}" y="{y}" class="key">- {escape(row[1])}</tspan> <tspan class="dots">{fill}</tspan>')
+        if kind in ("header", "title"):
+            # title keeps the plain text color so it stands out from the orange keys
+            rule = "-" + "\u2014" * max(3, line_chars - len(row[1]) - 3) + "-"
+            out.append(f'<tspan x="{info_x}" y="{y}">{escape(row[1])}</tspan> {rule}')
         elif kind == "item":
-            key, value = row[1], row[2]
-            segments = as_segments(value)
-            length = sum(len(text) for text, _ in segments)
-            dots = "." * max(2, line_chars - len(key) - length - 5)
-            spans = "".join(f'<tspan class="{cls}">{escape(text)}</tspan>' for text, cls in segments)
+            out.append(f'<tspan x="{info_x}" y="{y}"></tspan>' + render_cell(row[1], row[2], line_chars, ". "))
+        elif kind == "pair":
             out.append(
-                f'<tspan x="{info_x}" y="{y}" class="dots">. </tspan>'
-                f'<tspan class="key">{escape(key)}</tspan>:'
-                f'<tspan class="dots"> {dots} </tspan>'
-                + spans
+                f'<tspan x="{info_x}" y="{y}"></tspan>'
+                + render_cell(*row[1], left_w, ". ")
+                + " | "
+                + render_cell(*row[2], right_w, "")
             )
     out.append("</text>")
     out.append("</svg>")
