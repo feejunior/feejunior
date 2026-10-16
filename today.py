@@ -23,7 +23,7 @@ PROFILE = [
     ("Stack", "Python, Django, JavaScript, TypeScript, MySQL"),
     ("OS", "Linux, Windows"),
     ("Host", "FreeAgent"),
-    ("Learning", "Java - RocketSeat"),
+    ("Learning", "Pós Eng. de Software - Estácio"),
 ]
 
 CONTACT = [
